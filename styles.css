@@ -135,10 +135,11 @@ body {
 */
 
 :root {
-   --color-black: rgba(0, 0, 0, 1);
-   --color-white: rgba(255, 255, 255, 1);
-   --color-dark-gray: rgba(64, 64, 64, 1);
-   --color-light-gray: rgba(196, 196, 196, 1);
+   --color-black: #000000;
+   --color-light-black: #131619;
+   --color-white: #ffffff;
+   --color-dark-gray: #404040;
+   --color-light-gray: #c4c4c4;
 
    --border-radius: 30px;
 
@@ -184,6 +185,19 @@ a:hover {
    padding-inline: var(--container-padding-x);
 }
 
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
    font-weight: 700;
    text-transform: uppercase;
@@ -217,6 +231,7 @@ h1, h2, h3, h4, h5, h6 {
    justify-content: space-between;
    column-gap: 20px;
    padding-inline: 32px;
+   background-color: var(--color-light-black);
 }
 
 .header-logo {
@@ -244,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 .navigation-link-current::after {
    content: "";
    width: 5px;
-   height: 5px;
+   aspect-ratio: 1;
    background-color: currentColor;
    border-radius: 50%;
 }
@@ -260,12 +275,12 @@ h1, h2, h3, h4, h5, h6 {
    justify-content: center;
    row-gap: 4px;
    width: 40px;
-   height: 40px;
+   aspect-ratio: 1;
    padding: 0 8px;
    color: var(--color-white);
    background-color: transparent;
    border: 1px solid var(--color-white);
-   border-radius: var(--border-radius);
+   border-radius: 50%;
 }
 
 .hedaer-burger-button:hover {
